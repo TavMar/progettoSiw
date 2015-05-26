@@ -19,7 +19,7 @@ public class Ordini {
 	@Temporal (TemporalType.DATE)
 	private Date dataEvasione;
 	@OneToMany
-	@JoinColumn(name = "id_odini")
+	@JoinColumn(name = "id_ordini")
 	private List<OrderLine> lineeOrdine;
 	@ManyToOne
 	private Customer customer;

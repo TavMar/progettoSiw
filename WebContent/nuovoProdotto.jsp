@@ -36,9 +36,11 @@
 					required="false" cols="20" rows="5" />
 			</div>
 			<div>
-				<h:commandButton value="Submit"
+				<h:commandButton value="Invia"
 					action="#{prodottoController.creaProdotto}" />
 			</div>
+	<h:commandLink action="#{productController.listaProdotti}"
+						value="Lista di tutti i prodotti" />
 		</h:form>
 	</f:view>
 </body>

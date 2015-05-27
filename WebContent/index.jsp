@@ -16,7 +16,7 @@
 
 	<h1>BENVENUTO NEL NUOVO MONDO DELL' E-COMMERCE</h1>
 	<button class="btn btn-success">
-		<a type="button" href='<c:url value="nuovoProdotto.jsp" />'>Inserisci
+		<a type="button" href='<c:url value="/faces/nuovoProdotto.jsp" />'>Inserisci
 			Prodotto</a>
 	</button>
 	<button class="btn btn-success">

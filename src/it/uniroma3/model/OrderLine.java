@@ -10,7 +10,7 @@ public class OrderLine {
 	private Long id;
 	private Float prezzo;
 	@Column(nullable=false)
-	private Integer quantità;
+	private Integer quantita;
 	@ManyToOne
 	private Prodotto prodotto;
 	@ManyToOne
@@ -28,12 +28,12 @@ public class OrderLine {
 		this.prezzo = prezzo;
 	}
 
-	public Integer getQuantità() {
-		return quantità;
+	public Integer getQuantita() {
+		return quantita;
 	}
 
-	public void setQuantità(Integer quantità) {
-		this.quantità = quantità;
+	public void setQuantita(Integer quantita) {
+		this.quantita = quantita;
 	}
 
 }

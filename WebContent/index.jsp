@@ -20,7 +20,10 @@
 			Prodotto</a>
 	</button>
 	<button class="btn btn-success">
-		<a type="button" href='<c:url value="prodotto.jsp" />'>Visualizza Prodotto</a>
+		<a type="button" href='<c:url value="/faces/prodotto.jsp" />'>Visualizza Prodotto</a>
+	</button>
+	<button class="btn btn-success">
+		<a type="button" href='<c:url value="/faces/login.jsp" />'>Login</a>
 	</button>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

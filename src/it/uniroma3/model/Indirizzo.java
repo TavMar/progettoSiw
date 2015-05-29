@@ -11,7 +11,7 @@ public class Indirizzo {
 	@Column(nullable = false)
 	private String via;
 	@Column(nullable = false)
-	private String città;
+	private String citta;
 	private String stato;
 	@Column(nullable = false)
 	private String cap;
@@ -28,12 +28,12 @@ public class Indirizzo {
 		this.via = via;
 	}
 
-	public String getCittà() {
-		return città;
+	public String getCitta() {
+		return citta;
 	}
 
-	public void setCittà(String città) {
-		this.città = città;
+	public void setCitta(String citta) {
+		this.citta = citta;
 	}
 
 	public String getStato() {

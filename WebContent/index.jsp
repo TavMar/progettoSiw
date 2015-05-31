@@ -1,14 +1,13 @@
-
+<%@ page language="java" contentType="text/html; charset=US-ASCII"
+	pageEncoding="US-ASCII"%>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
 <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="US-ASCII">
-<title>ESAME SIW PROVA1</title>
+<title>ESAME SIW PROVA1</title> 
 <!-- Bootstrap -->
 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 </head>

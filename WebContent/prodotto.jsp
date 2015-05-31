@@ -10,11 +10,11 @@
 </head>
 <body>
 	<f:view>
-		<h1>${prodottoController.prodotto.nome}</h1>
+		<h1>${productController.product.name}</h1>
 		<h2>Dettagli:</h2>
-		<div>Codice: ${prodottoController.prodotto.codice}</div>
-		<div>Prezzo: ${prodottoController.prodotto.prezzo}</div>
-		<div>Descrizione: ${prodottoController.prodotto.descrizione}</div>
+		<div>Codice: ${productController.product.code}</div>
+		<div>Prezzo: ${productController.product.price}</div>
+		<div>Descrizione: ${productController.product.description}</div>
 	</f:view>
 </body>
 </html>

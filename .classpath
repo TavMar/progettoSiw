@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/Marco Taverniti/Desktop/Università/postgresql-9.4-1201.jdbc41.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/apache-tomee-jaxrs-1.7.1/lib/bval-core-0.5.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/apache-tomee-jaxrs-1.7.1/lib/bval-jsr303-0.5.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/apache-tomee-jaxrs-1.7.1/lib/catalina.jar"/>
@@ -108,5 +107,6 @@
 	<classpathentry kind="lib" path="C:/Program Files/apache-tomee-jaxrs-1.7.1/lib/xbean-reflect-4.0.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/apache-tomee-jaxrs-1.7.1/lib/xmlschema-core-2.0.3.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Program Files/apache-tomee-jaxrs-1.7.1/lib/postgresql-9.4-1201.jdbc41.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -89,4 +89,20 @@ public class CustomerController {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public Indirizzo getIndirizzo() {
+		return indirizzo;
+	}
+
+	public void setIndirizzo(Indirizzo indirizzo) {
+		this.indirizzo = indirizzo;
+	}
+
+	public List<Ordini> getOrdini() {
+		return ordini;
+	}
+
+	public void setOrdini(List<Ordini> ordini) {
+		this.ordini = ordini;
+	}
 }

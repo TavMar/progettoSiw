@@ -13,34 +13,34 @@ public class ProdottoFacade {
 	 @PersistenceContext(unitName = "progettoSiw")
 	    private EntityManager em;
 	 
-	 public Prodotto creaProdotto(String nome, String codice, Float prezzo, String descrizione) {
-			Prodotto prodotto = new Prodotto(nome, prezzo, descrizione, codice);
+	 public Product createProduct(String name, String code, Float price, String description) {
+			Product prodotto = new Product(name,code,price,description);
 			em.persist(prodotto);
 			return prodotto;
 		}
 	 
-	 public Prodotto getProdotto(Long id) {
-		    Prodotto prodotto = em.find(Prodotto.class, id);
+	 public Product getProdotto(Long id) {
+		    Product prodotto = em.find(Product.class, id);
 			return prodotto;
 		}
 		
-		public List<Prodotto> getListaProdotti() {
-	        CriteriaQuery<Prodotto> cq = em.getCriteriaBuilder().createQuery(Prodotto.class);
-	        cq.select(cq.from(Prodotto.class));
-	        List<Prodotto> prodotti = em.createQuery(cq).getResultList();
+		public List<Product> getListaProdotti() {
+	        CriteriaQuery<Product> cq = em.getCriteriaBuilder().createQuery(Product.class);
+	        cq.select(cq.from(Product.class));
+	        List<Product> prodotti = em.createQuery(cq).getResultList();
 			return prodotti;
 		}
 
-		public void aggiornaProdotto(Prodotto prodotto) {
+		public void aggiornaProdotto(Product prodotto) {
 	        em.merge(prodotto);
 		}
 		
-	    private void eliminaProdotto(Prodotto prodotto) {
+	    private void eliminaProdotto(Product prodotto) {
 	        em.remove(prodotto);
 	    }
 
 		public void eliminaProdottoDaId(Long id) {
-	        Prodotto prodotto = em.find(Prodotto.class, id);
+	        Product prodotto = em.find(Product.class, id);
 	        eliminaProdotto(prodotto);
 		}
 		

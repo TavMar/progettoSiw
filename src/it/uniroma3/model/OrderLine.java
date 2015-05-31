@@ -12,7 +12,7 @@ public class OrderLine {
 	@Column(nullable=false)
 	private Integer quantita;
 	@ManyToOne
-	private Prodotto prodotto;
+	private Product prodotto;
 	@ManyToOne
 	private Ordini ordine;
 

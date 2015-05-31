@@ -10,27 +10,25 @@
 <title>Login</title>
 </head>
 <body>
+	<h1>LOGIN</h1>
 	<f:view>
-		<h:form>
-			<table>
-				<tr>
-					<td><h:outputText value="EMAIL:" /></td>
-					<td><h:inputText id="email"
-							value="#{customerController.email}" /></td>
-					<br>
-				</tr>
-				<tr>
-					<td><h:outputText value="PASSWORD:" /></td>
-					<td><h:inputSecret id="password"
-							value="#{customerController.password}" /></td>
-				</tr>
-				<br>
-				<tr>
-					<td><h:commandButton value="Login"
-							action="#{customerController.checkLogin(customerController.email)}" /></td>
-				</tr>
-			</table>
-		</h:form>
+		<table>
+			<tr>
+				<td><h:outputText value="EMAIL:" /></td>
+				<td><h:inputText id="email" value="#{customerController.email}" /></td>
+			</tr>
+			<tr>
+				<td><h:outputText value="PASSWORD:" /></td>
+				<td><h:inputSecret id="password"
+						value="#{customerController.password}" /></td>
+			</tr>
+
+			<tr>
+				<td><h:commandButton value="Login"
+						action="#{customerController.checkLogin(customerController.email)}" /></td>
+			</tr>
+		</table>
+
 	</f:view>
 </body>
 </html>

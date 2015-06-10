@@ -5,25 +5,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>New Product</title>
+<title>Inserisci un nuovo prodotto</title>
 </head>
 <body>
 <f:view>
 <h:form>
     <div>Name: <h:inputText value="#{productController.name}" 
                      required="true"
-                     requiredMessage="Name is mandatory"
+                     requiredMessage="Il nome è obbligatorio"
                      id="name"/> <h:message for="name" />
 	</div>
     <div>Code: <h:inputText value="#{productController.code}" 
                      required="true"
-                     requiredMessage="Code is mandatory"
+                     requiredMessage="Il codice è obbligatorio"
                      id="code"/> <h:message for="code" />
 	</div>
     <div>Price: <h:inputText value="#{productController.price}" 
                      required="true"
-                     requiredMessage="Price is mandatory"
-                     converterMessage="Price must be a number"
+                     requiredMessage="Il prezzo è obbligatorio"
+                     converterMessage="Il prezzo deve essere un numero"
                      id="price"/> <h:message for="price" />
 	</div>
     <div>Description: <h:inputTextarea value="#{productController.description}" 
@@ -33,10 +33,10 @@
                      
 	</div>
 	<div>
-		<h:commandButton value="Submit"  action="#{productController.createProduct}"/>
+		<h:commandButton value="Inserisci"  action="#{productController.createProduct}"/>
 	</div>
 	<h:commandLink action="#{productController.listProducts}"
-						value="List all Products" />
+						value="Catalogo prodotti" />
 </h:form>
 </f:view>
 </body>

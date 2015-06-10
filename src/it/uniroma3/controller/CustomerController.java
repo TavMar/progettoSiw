@@ -33,7 +33,7 @@ public class CustomerController {
 	public String checkLogin() {
 		this.customer = customerFacade.checkLogin(email);
 		if(this.customer.checkPassword(password))
-		return "customer"; 
+		return "customerIndex"; 
 		return "Password errata";
 	}
 	

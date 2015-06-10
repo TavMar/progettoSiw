@@ -12,17 +12,18 @@
 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 </head>
 <body>
-	<h1>BENVENUTO NEL NUOVO MONDO DELL' E-COMMERCE</h1>
+	<h1>PAGINA AMMINISTRATORE</h1>
 
 <nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header">
-    <a class="navbar-brand" href="index.jsp">Home</a>
+    <a class="navbar-brand" href="adminIndex.jsp">Home</a>
   </div>
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
-      <li class="active"><a href='<c:url value="/faces/prodotti.jsp"/>'>Catalogo</a></li>
-      <li><a href='<c:url value="/faces/login.jsp"/>'>Login</a></li>
-      <li><a href='<c:url value="/faces/adminLogin.jsp"/>'>Amministratore</a></li>
+      <li class="active"><a href='<c:url value="/faces/nuovoCliente.jsp"/>'>Inserisci Nuovo Cliente</a></li>
+       <li><a href='<c:url value="/faces/nuovoProdotto.jsp"/>'>Inserisci Nuovo Prodotto</a></li>
+      <li><a href='<c:url value="/faces/clienti.jsp"/>'>Lista clienti</a></li>
+    
     </ul>
   </div>
   

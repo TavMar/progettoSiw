@@ -10,8 +10,7 @@
 <title>Login</title>
 </head>
 <body>
-<f:view>
-	<h1>LOGIN</h1>
+	<h1>LOGIN AMMINISTRATORE</h1>
 <div class="container">
     <form>
         <div class="form-group">
@@ -25,40 +24,14 @@
         <div class="checkbox">
             <label><input type="checkbox">Ricordati</label>
         </div>
-        	<h:commandButton value="Inserisci"  action="#{customerController.checkLogin}"/>
+        <button type="submit" class="btn btn-primary">
+        	<a type="button" href='<c:url value="adminIndex.jsp" />'>Login</a>
        </button>
     </form>
 </div>
-</f:view>
 </body>
 </html>                                		
 
 
-
-
-
-
-
-<%-- 	<f:view>
-		<table>
-			<tr>
-				<td><h:outputText value="EMAIL:" /></td>
-				<td><h:inputText id="email" value="#{customerController.email}" /></td>
-			</tr>
-			<tr>
-				<td><h:outputText value="PASSWORD:" /></td>
-				<td><h:inputSecret id="password"
-						value="#{customerController.password}" /></td>
-			</tr>
-
-			<tr>
-				<td><h:commandButton value="Login"
-						action="#{customerController.checkLogin(customerController.email)}" /></td>
-			</tr>
-		</table>
-
-	</f:view>
-></body>
-</html> --%>
 
 

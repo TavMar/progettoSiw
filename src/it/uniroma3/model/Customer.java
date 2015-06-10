@@ -25,6 +25,14 @@ public class Customer {
 	private List<Ordini> ordini;
 	private String email;
 	private String password;
+	
+	public Customer(String nome,String cognome, String email, String password){
+		this.nome=nome;
+		this.cognome=cognome;
+		this.email=email;
+		this.password=password;
+	}
+	
 	public String getNome() {
 		return nome;
 	}

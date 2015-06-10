@@ -6,15 +6,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Descrizione Prodotto:</title>
+<title>Cliente:</title>
 </head>
 <body>
 	<f:view>
-		<h1>${productController.product.name}</h1>
-		<h2>Dettagli:</h2>
-		<div>Codice: ${productController.product.code}</div>
-		<div>Prezzo: ${productController.product.price}</div>
-		<div>Descrizione: ${productController.product.description}</div>
+		<div>Nome: ${adminController.customer.nome}</div>
+		<div>Cognome: ${adminController.customer.cognome}</div>
+		<div>Email: ${adminController.customer.email}</div>
+		<div>Password: ${adminController.customer.password}</div>
 	</f:view>
 	<a href='adminIndex.jsp'>Torna alla home</a>
 </body>

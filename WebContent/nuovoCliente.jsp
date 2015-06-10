@@ -10,22 +10,22 @@
 <body>
 <f:view>
 <h:form>
-    <div>Nome: <h:inputText value="#{customerController.nome}" 
+    <div>Nome: <h:inputText value="#{adminController.nome}" 
                      required="true"
                      requiredMessage="Il nome è obbligatorio" 
                      id="nome"/> <h:message for="nome" />
 	</div>
-    <div>Cognome: <h:inputText value="#{customerController.nome}" 
+    <div>Cognome: <h:inputText value="#{adminController.cognome}" 
                      required="true"
                     requiredMessage="Il cognome è obbligatorio" 
                      id="cognome"/> <h:message for="cognome" />
 	</div>
-    <div>Email: <h:inputText value="#{customerController.email}" 
+    <div>Email: <h:inputText value="#{adminController.email}" 
                      required="true"
                  requiredMessage="Il prezzo è obbligatorio"
                      id="email"/> <h:message for="email" />
 	</div>
-	<div>Password: <h:inputText value="#{customerController.password}" 
+	<div>Password: <h:inputText value="#{adminController.password}" 
                      required="true"
                   requiredMessage="Il prezzo è obbligatorio"
                      id="password"/> <h:message for="password" />

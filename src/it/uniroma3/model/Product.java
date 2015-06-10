@@ -26,14 +26,18 @@ import javax.persistence.Column;
 	@Column(nullable = false)
 	private String code;
 	
+	@Column(nullable = false)
+	private int quantity;
+	
 	public Product() {
     }
 
-	public Product(String name, String code, Float price, String description) {
+	public Product(String name, String code, Float price, String description,int quantity) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.code = code;
+        this.quantity = quantity;
 }
 
     //          Getters & Setters        
@@ -85,6 +89,14 @@ import javax.persistence.Column;
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 	
 }

@@ -26,6 +26,12 @@
                      converterMessage="Il prezzo deve essere un numero"
                      id="price"/> <h:message for="price" />
 	</div>
+	<div>Quantita': <h:inputText value="#{productController.quantity}" 
+                     required="true"
+                     requiredMessage="Il prezzo è obbligatorio"
+                     converterMessage="Il prezzo deve essere un numero"
+                     id="quantity"/> <h:message for="quantity" />
+	</div>
     <div>Description: <h:inputTextarea value="#{productController.description}" 
     				required="false" 
     				cols="20" 

@@ -13,8 +13,8 @@ public class ProdottoFacade {
 	 @PersistenceContext(unitName = "progettoSiw")
 	    private EntityManager em;
 	 
-	 public Product createProduct(String name, String code, Float price, String description) {
-			Product prodotto = new Product(name,code,price,description);
+	 public Product createProduct(String name, String code, Float price, String description, int quantity) {
+			Product prodotto = new Product(name,code,price,description,quantity);
 			em.persist(prodotto);
 			return prodotto;
 		}

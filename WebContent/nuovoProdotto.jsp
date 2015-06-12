@@ -41,8 +41,6 @@
 	<div>
 		<h:commandButton value="Inserisci"  action="#{productController.createProduct}"/>
 	</div>
-	<h:commandLink action="#{productController.listProducts}"
-						value="Catalogo prodotti" />
 </h:form>
 </f:view>
 </body>

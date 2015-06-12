@@ -3,14 +3,16 @@ package it.uniroma3.model;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.TypedQuery;
+import it.uniroma3.model.Product;
+
 
 import java.util.List;
 
 @Stateless
 public class ProdottoFacade {
 
-	 @PersistenceContext(unitName = "progettoSiw")
+	 @PersistenceContext(unitName = "prova")
 	    private EntityManager em;
 	 
 	 public Product createProduct(String name, String code, Float price, String description, int quantity) {
@@ -20,15 +22,13 @@ public class ProdottoFacade {
 		}
 	 
 	 public Product getProdotto(Long id) {
-		    Product prodotto = em.find(Product.class, id);
-			return prodotto;
+		    return em.find(Product.class, id);
 		}
 		
 		public List<Product> getListaProdotti() {
-	        CriteriaQuery<Product> cq = em.getCriteriaBuilder().createQuery(Product.class);
-	        cq.select(cq.from(Product.class));
-	        List<Product> prodotti = em.createQuery(cq).getResultList();
-			return prodotti;
+			TypedQuery<Product> q = em.createNamedQuery("findAllProducts",Product.class);	
+			List<Product> result = q.getResultList();
+			return result;
 		}
 
 		public void aggiornaProdotto(Product prodotto) {

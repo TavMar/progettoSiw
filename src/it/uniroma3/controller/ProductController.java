@@ -3,15 +3,17 @@ package it.uniroma3.controller;
 import java.util.List;
 
 
+
 import it.uniroma3.model.ProdottoFacade;
 import it.uniroma3.model.Product;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 
 @ManagedBean
-public class ProductController {
+public class ProductController extends SessioneController{
 	
 	@ManagedProperty(value="#{param.id}")
 	private Long id;
@@ -26,19 +28,24 @@ public class ProductController {
 	@EJB
 	private ProdottoFacade productFacade;
 	
+	@PostConstruct
+	public void initProductController(){
+		this.product = (Product) this.getSessionAttribute("currentProduct");
+	}
+	
 	public String createProduct() {
-		this.product = productFacade.createProduct(name, code, price, description,quantity);
+		this.product = productFacade.createProduct(name,code,price,description,quantity);
 		return "prodotto"; 
 	}
 	
-	public String listProducts() {
-		this.products = productFacade.getListaProdotti();
-		return "products"; 
+	public List<Product> listProducts() {
+		return this.products = productFacade.getListaProdotti(); 
 	}
 
 	
 	public String findProduct() {
 		this.product = productFacade.getProdotto(id);
+		this.setSessionAttribute("currentProduct", this.product);
 		return "prodotto";
 	}
 

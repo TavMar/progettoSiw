@@ -19,6 +19,13 @@ public class Indirizzo {
 	public Indirizzo(){
 		
 	}
+	
+	public Indirizzo(String via,String citta,String cap,String stato){
+	this.via=via;
+	this.citta=citta;
+	this.cap=cap;
+	this.stato=stato;
+	}
 
 	public String getVia() {
 		return via;

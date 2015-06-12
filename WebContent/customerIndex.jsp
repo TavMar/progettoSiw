@@ -18,6 +18,10 @@
 		<div class="navbar-header">
 			<a class="navbar-brand" href="adminIndex.jsp">Home</a>
 		</div>
+		<div>
+			<h2>${customerController.getCurrentCustomer().nome}
+				${customerController.getCurrentCustomer().cognome}</h2>
+		</div>
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li class="active"><a

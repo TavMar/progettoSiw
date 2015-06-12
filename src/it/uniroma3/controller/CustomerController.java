@@ -2,43 +2,52 @@ package it.uniroma3.controller;
 
 import it.uniroma3.model.Customer;
 import it.uniroma3.model.CustomerFacade;
-import it.uniroma3.model.Indirizzo;
-import it.uniroma3.model.Ordini;
+import it.uniroma3.model.Ordine;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 
-@ManagedBean
-public class CustomerController {
-	
+@ManagedBean(name = "CustomerController")
+public class CustomerController extends SessioneController {
+
 	@ManagedProperty(value="#{param.id}")
 	private Long id;
 	private String nome;
 	private String cognome;
-	private Date dataDiNascita;
-	private Date dataRegistrazione;
-	private Indirizzo indirizzo;
-	private List<Ordini> ordini;
+	private String dataDiNascita;
+	private String via;
+	private String citta;
+	private String stato;
+	private String cap;
+	private List<Ordine> ordini;
 	private String email;
 	private String password;
-	private Customer customer;
-	
+
 	@EJB
 	private CustomerFacade customerFacade;
-	
-	public String checkLogin() {
-		this.customer = customerFacade.checkLogin(email);
-		if(this.customer.checkPassword(password))
-		return "customerIndex"; 
-		return "Password errata";
+
+	public String checkLogin() throws Exception {
+		String pagina = "customerIndex.jsp";
+		Customer customer = this.customerFacade.checkLogin(email);
+		if(customer!=null)
+			try{
+				customer.checkPassword(password);
+				this.setCurrentCustomer(customer);
+			}
+		catch (Exception e){
+
+			pagina = "error";
+		}
+
+		else pagina = "error";
+		return pagina;
 	}
-	
+
 	public String listaOrdini() {
-		this.ordini = customerFacade.getListaOrdini();
+		this.ordini = this.customerFacade.getListaOrdini();
 		return "ordini"; 
 	}
 
@@ -58,22 +67,6 @@ public class CustomerController {
 		this.cognome = cognome;
 	}
 
-	public Date getDataDiNascita() {
-		return dataDiNascita;
-	}
-
-	public void setDataDiNascita(Date dataDiNascita) {
-		this.dataDiNascita = dataDiNascita;
-	}
-
-	public Date getDataRegistrazione() {
-		return dataRegistrazione;
-	}
-
-	public void setDataRegistrazione(Date dataRegistrazione) {
-		this.dataRegistrazione = dataRegistrazione;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -90,19 +83,94 @@ public class CustomerController {
 		this.password = password;
 	}
 
-	public Indirizzo getIndirizzo() {
-		return indirizzo;
-	}
 
-	public void setIndirizzo(Indirizzo indirizzo) {
-		this.indirizzo = indirizzo;
-	}
 
-	public List<Ordini> getOrdini() {
+	public List<Ordine> getOrdini() {
 		return ordini;
 	}
 
-	public void setOrdini(List<Ordini> ordini) {
+	public void setOrdini(List<Ordine> ordini) {
 		this.ordini = ordini;
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getDataDiNascita() {
+		return dataDiNascita;
+	}
+
+	public void setDataDiNascita(String dataDiNascita) {
+		this.dataDiNascita = dataDiNascita;
+	}
+
+	public String getStreet() {
+		return via;
+	}
+
+	public void setStreet(String street) {
+		this.via = street;
+	}
+
+	public String getCity() {
+		return citta;
+	}
+
+	public void setCity(String city) {
+		this.citta = city;
+	}
+
+	public String getState() {
+		return stato;
+	}
+
+	public void setState(String state) {
+		this.stato = state;
+	}
+
+	public String getZipcode() {
+		return cap;
+	}
+
+	public void setZipcode(String zipcode) {
+		this.cap = zipcode;
+	}
+
+	public String getVia() {
+		return via;
+	}
+
+	public void setVia(String via) {
+		this.via = via;
+	}
+
+	public String getCitta() {
+		return citta;
+	}
+
+	public void setCitta(String citta) {
+		this.citta = citta;
+	}
+
+	public String getStato() {
+		return stato;
+	}
+
+	public void setStato(String stato) {
+		this.stato = stato;
+	}
+
+	public String getCap() {
+		return cap;
+	}
+
+	public void setCap(String cap) {
+		this.cap = cap;
+	}
+
 }

@@ -1,9 +1,14 @@
 package it.uniroma3.controller;
 
 import it.uniroma3.model.AdminFacade;
+import it.uniroma3.model.Amministratore;
 import it.uniroma3.model.Customer;
-import it.uniroma3.model.Ordini;
+import it.uniroma3.model.Indirizzo;
+import it.uniroma3.model.Ordine;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -11,13 +16,18 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 
 @ManagedBean
-public class AdminController {
+public class AdminController extends SessioneController{
 
 	@ManagedProperty(value="#{param.id}")
 	private Long id;
 	private String nome;
 	private String cognome;
-	private List<Ordini> ordini;
+	private String dataDiNascita;
+	private String via;
+	private String citta;
+	private String stato;
+	private String cap;
+	private List<Ordine> ordini;
 	private String email;
 	private String password;
 	private Customer customer;
@@ -25,9 +35,28 @@ public class AdminController {
 	@EJB
 	private AdminFacade adminFacade;
 
-	public String createCustomer() {
-		this.customer = adminFacade.createCustomer(nome, cognome, email, password);
+	public String createCustomer() throws ParseException {
+		Date data;
+			data = new SimpleDateFormat("dd/MM/yyyy").parse(this.dataDiNascita);
+		this.customer = adminFacade.createCustomer(nome, cognome, email, password,data,new Indirizzo(via,citta,cap,stato));
 		return "cliente"; 
+	}
+	
+	public String checkLogin() throws Exception {
+		String pagina = "adminIndex.jsp";
+		Amministratore admin = this.adminFacade.checkLogin(email);
+		if(customer!=null)
+			try{
+				admin.checkPassword(password);
+				this.setCurrentAdmin(admin);
+			}
+		catch (Exception e){
+
+			pagina = "error";
+		}
+
+		else pagina = "error";
+		return pagina;
 	}
 
 	public String getNome() {
@@ -65,11 +94,11 @@ public class AdminController {
 	}
 
 
-	public List<Ordini> getOrdini() {
+	public List<Ordine> getOrdini() {
 		return ordini;
 	}
 
-	public void setOrdini(List<Ordini> ordini) {
+	public void setOrdini(List<Ordine> ordini) {
 		this.ordini = ordini;
 	}
 
@@ -87,5 +116,45 @@ public class AdminController {
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+
+	public String getDataDiNascita() {
+		return dataDiNascita;
+	}
+
+	public void setDataDiNascita(String dataDiNascita) {
+		this.dataDiNascita = dataDiNascita;
+	}
+
+	public String getVia() {
+		return via;
+	}
+
+	public void setVia(String via) {
+		this.via = via;
+	}
+
+	public String getCitta() {
+		return citta;
+	}
+
+	public void setCitta(String citta) {
+		this.citta = citta;
+	}
+
+	public String getStato() {
+		return stato;
+	}
+
+	public void setStato(String stato) {
+		this.stato = stato;
+	}
+
+	public String getCap() {
+		return cap;
+	}
+
+	public void setCap(String cap) {
+		this.cap = cap;
 	}
 }

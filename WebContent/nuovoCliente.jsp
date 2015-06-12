@@ -30,6 +30,34 @@
                   requiredMessage="Il prezzo è obbligatorio"
                      id="password"/> <h:message for="password" />
 	</div>
+	<div>Data di Nascita: <h:inputText value="#{adminController.dataDiNascita}" 
+                     required="true"
+                     requiredMessage="La data di nascita e' obbligatoria"
+                     id="dataDiNascita"/> <h:message for="dataDiNascita" />
+			</div>
+			
+			
+			<p>Indirizzo</p>
+			<div>Via: <h:inputText value="#{adminController.via}" 
+    				required="true"
+    				requiredMessage="L'indirizzo e' obbligatorio"
+                    id="via"/> <h:message for="via" />            
+			
+			 Cap: <h:inputText value="#{adminController.cap}" 
+    				required="true"
+    				requiredMessage="Il cap e' obbligatori"
+                    id="cap"/> <h:message for="cap" />  
+             </div>                 
+			<div>Citta': <h:inputText value="#{adminController.citta}" 
+    				required="true"
+    				requiredMessage="La citta' e' obbligatoria"
+                    id="citta"/> <h:message for="citta" />            
+			
+				Provincia: <h:inputText value="#{adminController.stato}" 
+    				required="true"
+    				requiredMessage="La provincia e' obbligatoria"
+                    id="stato"/> <h:message for="stato" />                       
+			</div>
 	
 
 	<div>

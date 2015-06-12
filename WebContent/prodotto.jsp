@@ -15,6 +15,7 @@
 		<div>Codice: ${productController.product.code}</div>
 		<div>Prezzo: ${productController.product.price}</div>
 		<div>Descrizione: ${productController.product.description}</div>
+		<div>Quantita': ${productController.product.quantity}</div>
 	</f:view>
 	<a href='adminIndex.jsp'>Torna alla home</a>
 </body>

@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Ordini {
+public class Ordine {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,14 +18,14 @@ public class Ordini {
 	private Date dataChiusura;
 	@Temporal (TemporalType.DATE)
 	private Date dataEvasione;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_ordini")
 	private List<OrderLine> lineeOrdine;
 	@ManyToOne
 	private Customer customer;
 
 
-	public Ordini(){
+	public Ordine(){
 
 	}
 

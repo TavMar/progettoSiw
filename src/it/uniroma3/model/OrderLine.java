@@ -14,7 +14,7 @@ public class OrderLine {
 	@ManyToOne
 	private Product prodotto;
 	@ManyToOne
-	private Ordini ordine;
+	private Ordine ordine;
 
 	public OrderLine(){
 

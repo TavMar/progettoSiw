@@ -25,7 +25,7 @@
             <label><input type="checkbox">Ricordati</label>
         </div>
         <button type="submit" class="btn btn-primary">
-        	<a type="button" href='<c:url value="adminIndex.jsp" />'>Login</a>
+        	<h:commandButton value ="Entra" action="#{adminController.checkLogin()}"/>
        </button>
     </form>
 </div>

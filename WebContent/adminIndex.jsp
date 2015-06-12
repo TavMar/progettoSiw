@@ -22,6 +22,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li class="active"><a href='<c:url value="/faces/nuovoCliente.jsp"/>'>Inserisci Nuovo Cliente</a></li>
        <li><a href='<c:url value="/faces/nuovoProdotto.jsp"/>'>Inserisci Nuovo Prodotto</a></li>
+        <li class="active"><a href='<c:url value="/faces/prodotti.jsp"/>'>Catalogo</a></li>
       <li><a href='<c:url value="/faces/clienti.jsp"/>'>Lista clienti</a></li>
     
     </ul>

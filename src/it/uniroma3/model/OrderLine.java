@@ -19,6 +19,12 @@ public class OrderLine {
 	public OrderLine(){
 
 	}
+	
+	public OrderLine(Integer quantita,Product prodotto){
+		this.quantita=quantita;
+		this.prodotto=prodotto;
+		this.prezzo=this.prodotto.getPrice();
+	}
 
 	public Float getPrezzo() {
 		return prezzo;

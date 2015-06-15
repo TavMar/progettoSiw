@@ -17,6 +17,22 @@
 		<div>Descrizione: ${productController.product.description}</div>
 		<div>Quantita': ${productController.product.quantity}</div>
 	</f:view>
-	<a href='adminIndex.jsp'>Torna alla home</a>
+	
+	<h:panelGroup rendered="#{ordineController.customerStaOrdinando()}">
+		<h:form>
+			<div>
+				Quantita' :
+				<h:inputText value="#{ordineController.quantity}" required="true"
+					requiredMessage="campo obbligatorio" id="quantity">
+				</h:inputText>
+				<h:message for="quantity" />
+				<div>
+					<h:commandButton value="Aggiungi all'acquisto" action="#{ordineController.addProdotto}">
+					</h:commandButton>
+				</div>
+			</div>
+		</h:form>
+	</h:panelGroup>
+	<a href='prodotti.jsp'>Torna al catalogo</a>
 </body>
 </html>

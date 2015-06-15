@@ -2,8 +2,8 @@ package it.uniroma3.model;
 
 import javax.persistence.*;
 
-
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
@@ -27,6 +27,12 @@ public class Ordine {
 
 	public Ordine(){
 
+	}
+	
+	public Ordine(Customer customer){
+		this.customer=customer;
+		this.dataCreazione=new Date();
+		this.lineeOrdine=new LinkedList<OrderLine>();
 	}
 
 	// GETTER AND SETTER
@@ -68,5 +74,13 @@ public class Ordine {
 
 	public void setDataEvasione(Date dataEvasione) {
 		this.dataEvasione = dataEvasione;
+	}
+	
+	public void addRigaOrdine(OrderLine o){
+		this.lineeOrdine.add(o);
+	}
+	
+	public List<OrderLine> getLineeOrdine(){
+		return this.lineeOrdine;
 	}
 }

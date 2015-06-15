@@ -1,27 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=US-ASCII" pageEncoding="US-ASCII"%>
-<%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
-<%@ taglib prefix="h"  uri="http://java.sun.com/jsf/html"%>
+<%@ page language="java" contentType="text/html; charset=US-ASCII"
+	pageEncoding="US-ASCII"%>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Log In </title>
+<title>Log In</title>
 </head>
 <body>
+	<div>
+		<h1>EFFETTUA IL LOGIN</h1>
+	</div>
 	<f:view>
-	<h:form>
-		<div>Email: <h:inputText value="#{customerController.email}"
-		required="true"
-		requiredMessage="Campo obbligatorio"
-		id="email"/><h:message for="email"/>
-		</div>
-		<div>Password: <h:inputSecret value = "#{customerController.password}"
-		required="true"
-		requiredMessage="Campo obbligatorio"
-		id="password"/><h:message for="passw"/>
-		</div>
-		<h:commandButton value ="Entra" action="#{customerController.checkLogin()}"/>
-	</h:form>
+		<h:panelGroup>
+			<h:form>
+				<div>
+					Email:
+					<h:inputText value="#{customerController.email}" required="true"
+						requiredMessage="Campo obbligatorio" id="email" />
+					<h:message for="email" />
+				</div>
+				<div>
+					Password:
+					<h:inputSecret value="#{customerController.password}"
+						required="true" requiredMessage="Campo obbligatorio" id="password" />
+					<h:message for="password" />
+				</div>
+				<h:commandButton value="Entra"
+					action="#{customerController.checkLogin(customerController.email)}" />
+			</h:form>
+		</h:panelGroup>
 	</f:view>
 </body>
 </html>

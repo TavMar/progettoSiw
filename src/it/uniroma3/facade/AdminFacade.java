@@ -1,5 +1,9 @@
-package it.uniroma3.model;
+package it.uniroma3.facade;
 
+
+import it.uniroma3.model.Amministratore;
+import it.uniroma3.model.Customer;
+import it.uniroma3.model.Indirizzo;
 
 import java.util.Date;
 

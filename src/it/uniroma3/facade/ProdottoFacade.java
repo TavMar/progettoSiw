@@ -1,4 +1,4 @@
-package it.uniroma3.model;
+package it.uniroma3.facade;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

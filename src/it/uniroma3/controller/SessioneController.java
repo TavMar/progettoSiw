@@ -31,6 +31,12 @@ public class SessioneController {
 		return session.getAttribute(value);
 	}
 
+	public void removeAttribute(String nameAttribute){
+		FacesContext context = FacesContext.getCurrentInstance();
+		HttpSession session = (HttpSession) context.getExternalContext().getSession(true);
+		session.removeAttribute(nameAttribute);
+	}
+	
 	public Customer getCurrentCustomer() {
 		return customerCorrente;
 	}

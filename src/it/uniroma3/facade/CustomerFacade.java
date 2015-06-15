@@ -1,4 +1,7 @@
-package it.uniroma3.model;
+package it.uniroma3.facade;
+
+import it.uniroma3.model.Customer;
+import it.uniroma3.model.Ordine;
 
 import java.util.List;
 

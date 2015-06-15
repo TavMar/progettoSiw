@@ -16,7 +16,7 @@
 
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="adminIndex.jsp">Home</a>
+			<a class="navbar-brand" href="customerIndex.jsp">Home</a>
 		</div>
 		<div>
 			<h2>${customerController.getCurrentCustomer().nome}

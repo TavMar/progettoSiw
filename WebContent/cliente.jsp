@@ -9,11 +9,15 @@
 <title>Cliente:</title>
 </head>
 <body>
+<div>DETTAGLI CLIENTE:
+</div>
 	<f:view>
+	<h:panelGroup>
 		<div>Nome: ${adminController.customer.nome}</div>
 		<div>Cognome: ${adminController.customer.cognome}</div>
 		<div>Email: ${adminController.customer.email}</div>
 		<div>Password: ${adminController.customer.password}</div>
+		</h:panelGroup>
 	</f:view>
 	<a href='adminIndex.jsp'>Torna alla home</a>
 </body>

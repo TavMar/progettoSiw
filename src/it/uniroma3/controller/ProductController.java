@@ -4,7 +4,8 @@ import java.util.List;
 
 
 
-import it.uniroma3.model.ProdottoFacade;
+
+import it.uniroma3.facade.ProdottoFacade;
 import it.uniroma3.model.Product;
 
 import javax.annotation.PostConstruct;

@@ -1,6 +1,6 @@
 package it.uniroma3.controller;
 
-import it.uniroma3.model.AdminFacade;
+import it.uniroma3.facade.AdminFacade;
 import it.uniroma3.model.Amministratore;
 import it.uniroma3.model.Customer;
 import it.uniroma3.model.Indirizzo;

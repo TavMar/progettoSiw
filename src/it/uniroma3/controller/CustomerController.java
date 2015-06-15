@@ -1,7 +1,7 @@
 package it.uniroma3.controller;
 
+import it.uniroma3.facade.CustomerFacade;
 import it.uniroma3.model.Customer;
-import it.uniroma3.model.CustomerFacade;
 import it.uniroma3.model.Ordine;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 
-@ManagedBean(name = "CustomerController")
+@ManagedBean
 public class CustomerController extends SessioneController {
 
 	@ManagedProperty(value="#{param.id}")
@@ -29,7 +29,7 @@ public class CustomerController extends SessioneController {
 	@EJB
 	private CustomerFacade customerFacade;
 
-	public String checkLogin() throws Exception {
+	public String checkLogin(String email) throws Exception {
 		String pagina = "customerIndex.jsp";
 		Customer customer = this.customerFacade.checkLogin(email);
 		if(customer!=null)

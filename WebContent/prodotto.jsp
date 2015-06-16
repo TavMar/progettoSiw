@@ -16,23 +16,25 @@
 		<div>Prezzo: ${productController.product.price}</div>
 		<div>Descrizione: ${productController.product.description}</div>
 		<div>Quantita': ${productController.product.quantity}</div>
-	</f:view>
-	
-	<h:panelGroup rendered="#{ordineController.customerStaOrdinando()}">
-		<h:form>
-			<div>
-				Quantita' :
-				<h:inputText value="#{ordineController.quantity}" required="true"
-					requiredMessage="campo obbligatorio" id="quantity">
-				</h:inputText>
-				<h:message for="quantity" />
+
+
+		<h:panelGroup rendered="#{ordineController.customerStaOrdinando()}">
+			<h:form>
 				<div>
-					<h:commandButton value="Aggiungi all'acquisto" action="#{ordineController.addProdotto}">
-					</h:commandButton>
+					Quantita' :
+					<h:inputText value="#{ordineController.quantity}" required="true"
+						requiredMessage="campo obbligatorio" id="quantity">
+					</h:inputText>
+					<h:message for="quantity" />
+					<div>
+						<h:commandButton value="Aggiungi all'acquisto"
+							action="#{ordineController.addProdotto}">
+						</h:commandButton>
+					</div>
 				</div>
-			</div>
-		</h:form>
-	</h:panelGroup>
-	<a href='prodotti.jsp'>Torna al catalogo</a>
+			</h:form>
+		</h:panelGroup>
+		<a href='prodotti.jsp'>Torna al catalogo</a>
+	</f:view>
 </body>
 </html>

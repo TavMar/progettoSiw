@@ -16,7 +16,7 @@ public class SessioneController {
 	@PostConstruct
 	public void init(){
 		this.customerCorrente = (Customer) getSessionAttribute("customerCorrente");
-		this.adminCorrente = (Amministratore) getSessionAttribute("adminCorrente");
+		this.setAdminCorrente((Amministratore) getSessionAttribute("adminCorrente"));
 	}
 
 	public void setSessionAttribute(String value,Object o){
@@ -48,7 +48,26 @@ public class SessioneController {
 
 	public void setCurrentAdmin(Amministratore a){
 		this.setSessionAttribute("adminCorrente", a);
-		this.adminCorrente = a;
+		this.setAdminCorrente(a);
 	}
 
+	public Amministratore getAdminCorrente() {
+		return adminCorrente;
+	}
+
+	public void setAdminCorrente(Amministratore adminCorrente) {
+		this.adminCorrente = adminCorrente;
+	}
+
+	public boolean adminLoggato(){
+		return this.adminCorrente!=null;
+	}
+	
+	public boolean customerLoggato(){
+		return this.customerCorrente!=null;
+	}
+	
+	public boolean nessunoLoggato(){
+		return this.customerCorrente!=null && this.adminCorrente!=null;
+	}
 }

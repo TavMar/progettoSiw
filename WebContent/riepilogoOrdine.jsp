@@ -1,37 +1,47 @@
-<!DOCTYPE html>
-<html xmlns:h="http://java.sun.com/jsf/html"
- 	  xmlns:f="http://java.sun.com/jsf/core"
- 	  xmlns:c="http://java.sun.com/jsp/jstl/core">
-<h:head>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Prodotti di un ordine</title>
-</h:head>
-<h:body>
-		<h1>Ecco i prodotti nell'ordine </h1>
-		
-			<table>
-			<tr><th>Nome</th><th>Prezzo</th><th>Quantita'</th> </tr>
-			<c:forEach var="orderLine" items="#{ordineController.ordineCorrente.getLineeOrdine()}">
-				
+</head>
+<body>
+	<f:view>
+		<h1>Ecco i prodotti nell'ordine :</h1>
+
+		<table>
+			<tr>
+				<th>Nome</th>
+				<th>Prezzo</th>
+				<th>Quantita'</th>
+			</tr>
+			<c:forEach var="orderLine"
+				items="${ordineController.ordineCorrente.getLineeOrdine()}">
+
+				<td>${orderLine.prodotto.name}</td>
 				<td>${orderLine.prezzo}</td>
 				<td>${orderLine.quantita}</td>
-			
-			</c:forEach>
-			</table>
-			<br/>
-			<h:form>
-	
-		<h:panelGroup rendered="#{ordineController.customerStaOrdinando()}">
-		<div><h:commandButton value="Cancella ordine" action="#{ordineController.cancellaOrdine}"></h:commandButton></div>
-		</h:panelGroup>
-		
-		<h:panelGroup rendered="#{orderController.customerPuoConcludere()}">
-			<h:commandButton value="Chiudi Ordine" action="#{ordineController.terminaOrdine}"></h:commandButton>
-		</h:panelGroup>
-		
-	</h:form>
-			
 
-</h:body>
+			</c:forEach>
+		</table>
+		<br />
+		<h:form>
+
+
+			<div>
+				<a href='ordini.jsp'>Torna alla lista di ordini</a>
+			</div>
+			<a href='customerIndex.jsp'>Torna alla home</a>
+
+
+		</h:form>
+
+	</f:view>
+</body>
 </html>
 
 

@@ -5,6 +5,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
+<f:view>
 <head>
 <meta charset="US-ASCII">
 <title>ESAME SIW PROVA1</title>
@@ -24,9 +25,12 @@
 		</div>
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><a
-					href='<c:url value="/faces/nuovoOrdine.jsp"/>'>Crea nuovo
-						ordine</a></li>
+				<li class="active"><h:form>
+
+						<h:commandLink styleClass="btn btn-success" value="Crea Ordine"
+							action="#{ordineController.initOrder()}" />
+
+					</h:form>
 				<li><a href='<c:url value="/faces/ordini.jsp"/>'>Lista
 						Ordini</a></li>
 				<li><a href='<c:url value="/faces/prodotti.jsp"/>'>Catalogo</a></li>
@@ -40,4 +44,5 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
 </body>
+</f:view>
 </html>

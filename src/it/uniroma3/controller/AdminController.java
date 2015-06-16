@@ -42,10 +42,10 @@ public class AdminController extends SessioneController{
 		return "cliente"; 
 	}
 	
-	public String checkLogin() throws Exception {
+	public String checkLogin(String email) throws Exception {
 		String pagina = "adminIndex.jsp";
 		Amministratore admin = this.adminFacade.checkLogin(email);
-		if(customer!=null)
+		if(admin!=null)
 			try{
 				admin.checkPassword(password);
 				this.setCurrentAdmin(admin);

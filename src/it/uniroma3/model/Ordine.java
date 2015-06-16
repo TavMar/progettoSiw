@@ -12,11 +12,11 @@ public class Ordine {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@Temporal (TemporalType.DATE)
+	@Temporal (TemporalType.TIMESTAMP)
 	private Date dataCreazione;
-	@Temporal (TemporalType.DATE)
+	@Temporal (TemporalType.TIMESTAMP)
 	private Date dataChiusura;
-	@Temporal (TemporalType.DATE)
+	@Temporal (TemporalType.TIMESTAMP)
 	private Date dataEvasione;
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_ordini")

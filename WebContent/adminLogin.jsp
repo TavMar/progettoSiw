@@ -11,24 +11,26 @@
 </head>
 <body>
 	<h1>LOGIN AMMINISTRATORE</h1>
-<div class="container">
-    <form>
-        <div class="form-group">
-            <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-        </div>
-        <div class="form-group">
-            <label for="inputPassword">Password</label>
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-        </div>
-        <div class="checkbox">
-            <label><input type="checkbox">Ricordati</label>
-        </div>
-        <button type="submit" class="btn btn-primary">
-        	<h:commandButton value ="Entra" action="#{adminController.checkLogin()}"/>
-       </button>
-    </form>
-</div>
+<f:view>
+		<h:panelGroup>
+			<h:form>
+				<div>
+					Email:
+					<h:inputText value="#{adminController.email}" required="true"
+						requiredMessage="Campo obbligatorio" id="email" />
+					<h:message for="email" />
+				</div>
+				<div>
+					Password:
+					<h:inputSecret value="#{adminController.password}"
+						required="true" requiredMessage="Campo obbligatorio" id="password" />
+					<h:message for="password" />
+				</div>
+				<h:commandButton value="Entra"
+					action="#{adminController.checkLogin(adminController.email)}" />
+			</h:form>
+		</h:panelGroup>
+</f:view>
 </body>
 </html>                                		
 

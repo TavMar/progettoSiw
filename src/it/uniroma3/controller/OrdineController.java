@@ -37,14 +37,14 @@ public class OrdineController extends SessioneController {
 		Ordine newOrder = new Ordine(this.getCurrentCustomer());
 		this.ordineCorrente = newOrder;
 		this.setSessionAttribute("currentOrder",newOrder);
-		return "products";
+		return "prodotti";
 	}
 
 	public String addProdotto(){
 		Product p = (Product) this.getSessionAttribute("currentProduct");
 		OrderLine ol = new OrderLine(this.quantity.intValue(),p);
 		this.ordineCorrente.addRigaOrdine(ol);
-		return "products";
+		return "prodotti";
 
 	}
 	public String terminaOrdine(){
@@ -58,7 +58,7 @@ public class OrdineController extends SessioneController {
 	public String cancellaOrdine(){
 		this.removeAttribute("currentOrder");
 		this.removeAttribute("currentProduct");
-		return "home";
+		return "customerIndex";
 	}
 
 	//	public String evadeOrder(){

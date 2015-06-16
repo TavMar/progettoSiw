@@ -12,31 +12,54 @@
 </head>
 <body>
 	<f:view>
-		<h1>${productController.product.name}</h1>
-		<h2>Dettagli:</h2>
-		<div>Codice: ${productController.product.code}</div>
+		<div class="sfondo_trasparente" style="float: left; width: 40%">
+			<legend>Dettagli prodotto:</legend>
+			<div style="width: 150px; float: left;">
+				<div>
+					<label for="nome">Nome</label>
+					<div>${productController.product.name}</div>
+				</div>
+				<div>
+					<label for="codice">Codice</label>
+					<div>${productController.product.code}</div>
+				</div>
+				<div>
+					<label for="prezzo">Prezzo</label>
+					<div>${productController.product.price}</div>
+				</div>
+				<div>
+					<label for="descrizione">Descrizione</label>
+					<div>${productController.product.description}</div>
+				</div>
+				<div>
+					<label for="quantita">Quantita'</label>
+					<div>${productController.product.quantity}</div>
+				</div>
+				<%-- <div>Codice: ${productController.product.code}</div>
 		<div>Prezzo: ${productController.product.price}</div>
 		<div>Descrizione: ${productController.product.description}</div>
-		<div>Quantita': ${productController.product.quantity}</div>
-		<br />
+		<div>Quantita': ${productController.product.quantity}</div> --%>
+				<br />
 
-		<h:panelGroup rendered="#{ordineController.customerStaOrdinando()}">
-			<h:form>
-				<div>
-					Quantita' :
-					<h:inputText value="#{ordineController.quantity}" required="true"
-						requiredMessage="campo obbligatorio" id="quantity">
-					</h:inputText>
-					<h:message for="quantity" />
-					<div>
-						<h:commandButton value="Aggiungi all'acquisto"
-							action="#{ordineController.addProdotto}">
-						</h:commandButton>
-					</div>
-				</div>
-			</h:form>
-		</h:panelGroup>
-		<a href='prodotti.jsp'>Torna al catalogo</a>
+				<h:panelGroup rendered="#{ordineController.customerStaOrdinando()}">
+					<h:form>
+						<div>
+							Quantita' :
+							<h:inputText value="#{ordineController.quantity}" required="true"
+								requiredMessage="campo obbligatorio" id="quantity">
+							</h:inputText>
+							<h:message for="quantity" />
+							<div>
+								<h:commandButton value="Aggiungi all'acquisto"
+									action="#{ordineController.addProdotto}">
+								</h:commandButton>
+							</div>
+						</div>
+					</h:form>
+				</h:panelGroup>
+				<a href='prodotti.jsp'>Torna al catalogo</a>
+			</div>
+		</div>
 	</f:view>
 </body>
 </html>

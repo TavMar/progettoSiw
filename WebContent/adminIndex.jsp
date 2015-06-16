@@ -7,7 +7,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="./risorse/css/bootstrap.min.css"></link>
-<link rel="stylesheet" href="./risorse/css/Tema.css"></link>
+<link rel="stylesheet" href="./risorse/css/tema2.css"></link>
 <meta charset="US-ASCII">
 <title>ESAME SIW PROVA1</title>
 
@@ -27,7 +27,7 @@
 						Cliente</a></li>
 				<li><a href='<c:url value="/faces/nuovoProdotto.jsp"/>'>Inserisci
 						Nuovo Prodotto</a></li>
-				<li class="active"><a
+				<li><a
 					href='<c:url value="/faces/prodotti.jsp"/>'>Visualizza il
 						catalogo prodotti</a></li>
 

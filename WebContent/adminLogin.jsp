@@ -12,30 +12,34 @@
 <title>Login</title>
 </head>
 <body>
-	<h1>LOGIN AMMINISTRATORE</h1>
 <f:view>
 		<h:panelGroup>
 			<h:form>
-				<div>
-					Email:
-					<h:inputText value="#{adminController.email}" required="true"
-						requiredMessage="Campo obbligatorio" id="email" />
-					<h:message for="email" />
-				</div>
-				<div>
-					Password:
-					<h:inputSecret value="#{adminController.password}"
-						required="true" requiredMessage="Campo obbligatorio" id="password" />
-					<h:message for="password" />
-				</div>
-				<h:commandButton value="Entra"
-					action="#{adminController.checkLogin(adminController.email)}" />
+				<legend>Esegui Accesso:</legend>
+				<div style="width: 150px; float: left;">
+					<div>
+						<label for="email">Email</label>
+
+						<h:inputText value="#{adminController.email}" required="true"
+							requiredMessage="Campo obbligatorio" id="email" />
+						<h:message for="email" />
+					</div>
+					<div>
+						<label for="password">Password</label>
+						<h:inputSecret value="#{adminController.password}"
+							required="true" requiredMessage="Campo obbligatorio"
+							id="password" />
+						<h:message for="password" />
+					</div>
+					<h:commandButton value="Entra"
+						action="#{adminController.checkLogin(adminController.email)}" />
 					<div class="alert alert-danger" role="alert">
 						<strong>${adminController.errore}</strong>
 					</div>
+				</div>
 			</h:form>
 		</h:panelGroup>
-</f:view>
+	</f:view>
 </body>
 </html>                                		
 

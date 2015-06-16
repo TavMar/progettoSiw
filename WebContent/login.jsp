@@ -12,29 +12,31 @@
 <title>Log In</title>
 </head>
 <body>
-	<div>
-		<h1>ACCEDI:</h1>
-	</div>
 	<f:view>
 		<h:panelGroup>
 			<h:form>
-				<div>
-					Email:
-					<h:inputText value="#{customerController.email}" required="true"
-						requiredMessage="Campo obbligatorio" id="email" />
-					<h:message for="email" />
-				</div>
-				<div>
-					Password:
-					<h:inputSecret value="#{customerController.password}"
-						required="true" requiredMessage="Campo obbligatorio" id="password" />
-					<h:message for="password" />
-				</div>
-				<h:commandButton value="Entra"
-					action="#{customerController.checkLogin(customerController.email)}" />
+				<legend>Esegui Accesso:</legend>
+				<div style="width: 150px; float: left;">
+					<div>
+						<label for="email">Email</label>
+
+						<h:inputText value="#{customerController.email}" required="true"
+							requiredMessage="Campo obbligatorio" id="email" />
+						<h:message for="email" />
+					</div>
+					<div>
+						<label for="password">Password</label>
+						<h:inputSecret value="#{customerController.password}"
+							required="true" requiredMessage="Campo obbligatorio"
+							id="password" />
+						<h:message for="password" />
+					</div>
+					<h:commandButton value="Entra"
+						action="#{customerController.checkLogin(customerController.email)}" />
 					<div class="alert alert-danger" role="alert">
 						<strong>${customerController.errore}</strong>
 					</div>
+				</div>
 			</h:form>
 		</h:panelGroup>
 	</f:view>

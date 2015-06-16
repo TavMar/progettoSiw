@@ -81,6 +81,10 @@ public class Ordine {
 	}
 	
 	public List<OrderLine> getLineeOrdine(){
-		return this.lineeOrdine;
+		return lineeOrdine;
+	}
+
+	public void setLineeOrdine(List<OrderLine> lineeOrdine) {
+		this.lineeOrdine = lineeOrdine;
 	}
 }

@@ -6,6 +6,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" href="./risorse/css/bootstrap.min.css"></link>
+<link rel="stylesheet" href="./risorse/css/Tema.css"></link>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login</title>
 </head>
@@ -28,6 +30,9 @@
 				</div>
 				<h:commandButton value="Entra"
 					action="#{adminController.checkLogin(adminController.email)}" />
+					<div class="alert alert-danger" role="alert">
+						<strong>${adminController.errore}</strong>
+					</div>
 			</h:form>
 		</h:panelGroup>
 </f:view>

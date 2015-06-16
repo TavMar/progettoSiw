@@ -20,7 +20,9 @@ public class OrdineFacade {
 	}
 
 	public Ordine trovaOrdine(Long id){
-		return em.find(Ordine.class, id);
+		TypedQuery<Ordine> t=em.createQuery("SELECT o FROM Ordine o WHERE o.id = :id", Ordine.class);
+		t.setParameter("id", id);
+		return t.getSingleResult();
 	}
 
 	public void aggiornaOrdine(Ordine o){

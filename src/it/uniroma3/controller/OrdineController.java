@@ -61,18 +61,6 @@ public class OrdineController extends SessioneController {
 		return "customerIndex";
 	}
 
-	//	public String evadeOrder(){
-	//		try {
-	//			this.orderFacade.evadeOrder(this.currentOrder);
-	//			this.message = "Ordine Evaso correttamente";
-	//		}
-	//		catch(ImpossibleEvadeOrder e ){
-	//			this.message = "Impossibile evadere l'ordine,la quantita di \n"+e.getMessage()+"\n non e' disponbile";
-	//		}
-	//		this.removeAttribute("currentOrder");
-	//		return "productsOrdered";
-	//	}
-
 	public String findOrder(){
 		this.ordineCorrente = this.ordineFacade.trovaOrdine(idOrder);
 		return "riepilogoOrdine";
@@ -114,6 +102,7 @@ public class OrdineController extends SessioneController {
 	}
 
 	public void setOrdineCorrente(Ordine ordineCorrente) {
+		this.setSessionAttribute("currentOrder", ordineCorrente);
 		this.ordineCorrente = ordineCorrente;
 	}
 }

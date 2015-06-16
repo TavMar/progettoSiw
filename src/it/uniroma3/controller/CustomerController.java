@@ -25,6 +25,7 @@ public class CustomerController extends SessioneController {
 	private List<Ordine> ordini;
 	private String email;
 	private String password;
+	private String errore;
 
 	@EJB
 	private CustomerFacade customerFacade;
@@ -38,11 +39,11 @@ public class CustomerController extends SessioneController {
 				this.setCurrentCustomer(customer);
 			}
 		catch (Exception e){
-
-			pagina = "error";
+			this.errore="Login fallito";
+			pagina = "login.jsp";
 		}
-
-		else pagina = "error";
+		else pagina = "login.jsp";
+		this.errore="Login fallito";
 		return pagina;
 	}
 
@@ -171,6 +172,14 @@ public class CustomerController extends SessioneController {
 
 	public void setCap(String cap) {
 		this.cap = cap;
+	}
+
+	public String getErrore() {
+		return errore;
+	}
+
+	public void setErrore(String errore) {
+		this.errore = errore;
 	}
 
 }

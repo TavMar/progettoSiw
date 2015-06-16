@@ -6,6 +6,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" href="./risorse/css/bootstrap.min.css"></link>
+<link rel="stylesheet" href="./risorse/css/Tema.css"></link>
 <title>Tuoi Ordini</title>
 </head>
 <body>
@@ -15,15 +17,15 @@
 			<table>
 				<c:forEach var="ordine" items="#{ordineController.getAllOrders()}">
 					<tr>
+						<th>Codice di riferimento</th>
 						<th>Data Creazione</th>
-						<th>Data Chiusura</th>
 					</tr>
 					<tr>
-						<td><h:commandLink value="#{ordine.dataCreazione}"
-								action="#{ordineController.findOrder()}">
+						<td><h:commandLink action="#{ordineController.findOrder}"
+								value="#{ordine.id}">
 								<f:param name="id" value="#{ordine.id}"></f:param>
 							</h:commandLink></td>
-						<td>${ordine.dataChiusura}</td>
+						<td>${ordine.dataCreazione}</td>
 					</tr>
 
 				</c:forEach>

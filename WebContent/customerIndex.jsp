@@ -6,43 +6,45 @@
 <!DOCTYPE html>
 <html>
 <f:view>
-<head>
+	<head>
+<link rel="stylesheet" href="./risorse/css/bootstrap.min.css"></link>
+<link rel="stylesheet" href="./risorse/css/Tema.css"></link>
 <meta charset="US-ASCII">
 <title>ESAME SIW PROVA1</title>
-<!-- Bootstrap -->
-<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-</head>
-<body>
-	<h1>PAGINA CLIENTE</h1>
+	</head>
+	<body>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="customerIndex.jsp">Home</a>
+			</div>
+			<div class="jumbotron">
+				<h2>
+					Benvenuto<small>
+						${customerController.getCurrentCustomer().nome}
+						${customerController.getCurrentCustomer().cognome}</small>
+				</h2>
 
-	<nav class="navbar navbar-default" role="navigation">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="customerIndex.jsp">Home</a>
-		</div>
-		<div>
-			<h2>${customerController.getCurrentCustomer().nome}
-				${customerController.getCurrentCustomer().cognome}</h2>
-		</div>
-		<div class="collapse navbar-collapse navbar-ex1-collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><h:form>
+				<!-- <p><a class="btn btn-primary btn-lg">Learn more</a></p> -->
+			</div>
 
-						<h:commandLink styleClass="btn btn-success" value="Crea Ordine"
-							action="#{ordineController.initOrder()}" />
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><h:form>
+							<h:commandLink styleClass="btn btn-success" value="Crea Ordine"
+								action="#{ordineController.initOrder()}" />
+						</h:form>
+					<li><a href='<c:url value="/faces/ordini.jsp"/>'>Lista
+							Ordini</a></li>
+					<li><a href='<c:url value="/faces/prodotti.jsp"/>'>Catalogo</a></li>
 
-					</h:form>
-				<li><a href='<c:url value="/faces/ordini.jsp"/>'>Lista
-						Ordini</a></li>
-				<li><a href='<c:url value="/faces/prodotti.jsp"/>'>Catalogo</a></li>
+				</ul>
+			</div>
 
-			</ul>
-		</div>
-
-	</nav>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="js/bootstrap.min.js"></script>
-</body>
+		</nav>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+	</body>
 </f:view>
 </html>

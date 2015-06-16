@@ -41,31 +41,14 @@
 						action="#{ordineController.cancellaOrdine}"></h:commandButton>
 				</div>
 			</h:panelGroup>
-
+		</h:form>
+		<h:form>
 			<h:panelGroup rendered="#{ordineController.customerPuoConcludere()}">
 				<h:commandButton value="Salva Ordine"
 					action="#{ordineController.terminaOrdine()}"></h:commandButton>
 			</h:panelGroup>
-
 		</h:form>
 		<br />
-		<h:form>
-			<h:panelGroup rendered="#{sessioneController.adminLoggato()}">
-				<div>
-					<a href='adminIndex'>Torna alla home</a>
-				</div>
-			</h:panelGroup>
-			<h:panelGroup rendered="#{sessioneController.customerLoggato()}">
-				<div>
-					<a href='customerIndex'>Torna alla home</a>
-				</div>
-			</h:panelGroup>
-			<h:panelGroup rendered="#{sessioneController.nessunoLoggato()}">
-				<div>
-					<a href='index'>Torna alla home</a>
-				</div>
-			</h:panelGroup>
-		</h:form>
 	</f:view>
 </body>
 </html>

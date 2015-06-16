@@ -6,12 +6,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" href="./risorse/css/bootstrap.min.css"></link>
+<link rel="stylesheet" href="./risorse/css/Tema.css"></link>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Log In</title>
 </head>
 <body>
 	<div>
-		<h1>EFFETTUA IL LOGIN</h1>
+		<h1>ACCEDI:</h1>
 	</div>
 	<f:view>
 		<h:panelGroup>
@@ -30,6 +32,9 @@
 				</div>
 				<h:commandButton value="Entra"
 					action="#{customerController.checkLogin(customerController.email)}" />
+					<div class="alert alert-danger" role="alert">
+						<strong>${customerController.errore}</strong>
+					</div>
 			</h:form>
 		</h:panelGroup>
 	</f:view>

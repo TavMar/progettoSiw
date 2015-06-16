@@ -31,6 +31,7 @@ public class AdminController extends SessioneController{
 	private String email;
 	private String password;
 	private Customer customer;
+	private String errore;
 
 	@EJB
 	private AdminFacade adminFacade;
@@ -51,11 +52,12 @@ public class AdminController extends SessioneController{
 				this.setCurrentAdmin(admin);
 			}
 		catch (Exception e){
-
-			pagina = "error";
+			this.errore="Login errato!";
+			pagina = "adminLogin.jsp";
 		}
 
-		else pagina = "error";
+		else pagina = "adminLogin.jsp";
+		this.errore="Login errato!";
 		return pagina;
 	}
 
@@ -156,5 +158,13 @@ public class AdminController extends SessioneController{
 
 	public void setCap(String cap) {
 		this.cap = cap;
+	}
+
+	public String getErrore() {
+		return errore;
+	}
+
+	public void setErrore(String errore) {
+		this.errore = errore;
 	}
 }

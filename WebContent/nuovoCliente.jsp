@@ -4,6 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="./risorse/css/bootstrap.min.css"></link>
+<link rel="stylesheet" href="./risorse/css/Tema.css"></link>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>Registra un nuovo cliente</title>
 </head>

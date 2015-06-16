@@ -5,6 +5,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" href="./risorse/css/bootstrap.min.css"></link>
+<link rel="stylesheet" href="./risorse/css/Tema.css"></link>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Descrizione Prodotto:</title>
 </head>
@@ -16,7 +18,7 @@
 		<div>Prezzo: ${productController.product.price}</div>
 		<div>Descrizione: ${productController.product.description}</div>
 		<div>Quantita': ${productController.product.quantity}</div>
-
+		<br />
 
 		<h:panelGroup rendered="#{ordineController.customerStaOrdinando()}">
 			<h:form>

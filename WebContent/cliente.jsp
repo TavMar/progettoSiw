@@ -25,7 +25,23 @@
 				</div>
 				<div>
 					<label for="indirizzo">Indirizzo</label>
-					<div>${adminController.customer.indirizzo}</div>
+					<br>
+				</div>
+				<div>
+					<label for="via">via:</label>
+					<div>${adminController.customer.indirizzo.via}</div>
+				</div>
+				<div>
+					<label for="citta">citta':</label>
+					<div>${adminController.customer.indirizzo.citta}</div>
+				</div>
+				<div>
+					<label for="provincia">provincia:</label>
+					<div>${adminController.customer.indirizzo.stato}</div>
+				</div>
+				<div>
+					<label for="cap">cap:</label>
+					<div>${adminController.customer.indirizzo.cap}</div>
 				</div>
 				<br /> <a href='adminIndex.jsp'>Torna alla home</a>
 			</div>

@@ -31,7 +31,7 @@
 									items="#{ordineController.getAllOrders()}">
 									<tr>
 										<th><h:form>
-												<h:commandLink action="#{ordineController.findOrder()}"
+												<h:commandLink action="#{ordineController.findOrder}"
 													value="#{ordine.id}">
 													<f:param name="id" value="#{ordine.id}" />
 												</h:commandLink>

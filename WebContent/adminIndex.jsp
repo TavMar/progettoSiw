@@ -13,12 +13,10 @@
 
 </head>
 <body>
-	<h1>Bentornato, ${adminController.getAdminCorrente().nome}</h1>
+	<h1> M&M E-Commerce</h1>
+	<h2>Bentornato, ${adminController.getAdminCorrente().nome}</h2>
 
 	<nav class="navbar navbar-default" role="navigation">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="adminIndex.jsp">Home</a>
-		</div>
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav navbar-right">
 

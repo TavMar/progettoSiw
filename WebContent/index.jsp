@@ -28,28 +28,5 @@
 		</div>
 
 	</nav>
-
-
-
-
-
-	<%-- 
-	<h1>BENVENUTO NEL NUOVO MONDO DELL' E-COMMERCE</h1>
-	<button class="btn btn-success">
-		<a type="button" href='<c:url value="/faces/nuovoProdotto.jsp" />'>Inserisci
-			Prodotto</a>
-	</button>
-	<button class="btn btn-success">
-		<a type="button" href='<c:url value="/faces/prodotto.jsp" />'>Visualizza Prodotto</a>
-	</button>
-	<button class="btn btn-success">
-		<a type="button" href='<c:url value="/faces/login.jsp" />'>Login</a>
-	</button> --%>
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<!-- 	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	Include all compiled plugins (below), or include individual files as needed
-	<script src="js/bootstrap.min.js"></script> -->
 </body>
 </html>

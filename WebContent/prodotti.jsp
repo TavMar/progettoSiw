@@ -41,10 +41,6 @@
 									</h:form>
 								</th>
 								<th>${product.price}</th>
-								<%-- <th>${product.code}</th> --%>
-								
-								<%-- <th>${product.description}</th>
-								<th>${product.quantity}</th> --%>
 							</c:forEach>
 						</tr>
 					</tbody>

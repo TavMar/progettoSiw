@@ -65,6 +65,7 @@ public class OrdineController extends SessioneController {
 
 	public String findOrder(){
 		this.ordineCorrente = this.ordineFacade.trovaOrdine(idOrder);
+		this.setSessionAttribute("currentOrder", this.ordineCorrente);
 		return "riepilogoOrdine";
 	}
 	
@@ -125,5 +126,13 @@ public class OrdineController extends SessioneController {
 
 	public void setMessaggio(String messaggio) {
 		this.messaggio = messaggio;
+	}
+
+	public OrdineFacade getOrdineFacade() {
+		return ordineFacade;
+	}
+
+	public void setOrdineFacade(OrdineFacade ordineFacade) {
+		this.ordineFacade = ordineFacade;
 	}
 }

@@ -1,0 +1,91 @@
+Caso d'uso UC1 - Consulta Listino
+Utente non registrato
+
+-Utente arriva sulla pagina principale dell'E-Commerce
+
+-Utente seleziona link "Catalogo Prodotti"
+
+-Il sistema re-indirizza l'utente sulla pagina associata al catalogo prodotti.
+
+-L'utente scorre la lista e seleziona il prodotto.
+
+-Il sistema re-indirizza l'utente sulla pagina descrizione prodotto contente tasto per tornare al catalogo.
+
+
+Caso d'uso UC2 - Effettua ordine
+Cliente(Utente registrato)
+
+-Il cliente effettua il login.
+
+-Il sistema restituisce nome e cognome dell'utente e la pagina principale per effettuare le operazioni.
+
+-Il cliente seleziona il link "Crea ordine". Il sistema restituisce la pagina "Catalogo prodotti" con il campo quantità abilitato e il tasto per aggiungere all'ordine. 
+ Il sistema crea una riga d'ordine selezionando il nome del prodotto, quantità e prezzo unitario dal catalogo prodotti.
+
+-Una volta terminata la scelta, il cliente seleziona il tasto "Concludi ordine", viene re-indirizzato alla pagina di riepilogo dell'ordine che conferma la creazione dell'ordine 
+ con il link per tornare alla home. Il sistema salva l'ordine nel database.
+
+
+Caso d'uso UC3 - Consulta i propri ordini
+Cliente(Utente registrato)
+
+-Il cliente effettua il login.
+
+-Il sistema restituisce il nome e cognome dell'utente e la pagina principale per effettuare le operazioni.
+
+-Il cliente seleziona il link per visualizzare i propri ordini. Il sistema restituisce la pagina che contiene la lista degli ordini del cliente in sequenza. 
+
+ Cliccando sul codice identificativo dell'ordine, Il sistema rimanda alla pagina "Riepilogo Ordine" che mostra le righe di quell'ordine con i vari dettagli.
+
+
+Caso d'uso UC4 - Inserimento prodotti nel catalogo
+Amministratore
+
+-L'amministratore effettua il login.
+
+-Il sistema restituisce il nome dell'amministratore e la pagina principale dedicata ad esso con l'elenco delle operazioni che può eseguire.
+
+-L'amministratore seleziona l'operazione "Inserisci nuovo prodotto".
+
+-Il sistema re-indirizza l'amministratore alla pagina "Inserisci prodotto". L'amministratore inserisce tutte le informazioni necessarie e conferma.
+
+-Il sistema registra il nuovo prodotto nel database e aggiorna il catalogo prodotti.
+
+
+Caso d'uso UC5 - Recupera indirizzo cliente
+Amministratore
+
+-L'amministratore effettua il login.
+
+-Il sistema restituisce il nome dell'amministratore e la pagina principale dedicata ad esso con l'elenco delle operazioni che può eseguire.
+
+-L'amministratore seleziona l'operazione "Ricerca cliente".
+
+-Il sistema re-indirizza l'amministratore alla pagina "Cerca Info". L'amministratore inserisce l'identificativo dell'ordine.
+
+-Il sistema restituisce Nome, Cognome e Indirizzo del cliente che ha effettuato l'ordine corrispondente all'indentificativo inserito.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -14,19 +14,12 @@
 	</head>
 	<body>
 		<nav class="navbar navbar-default" role="navigation">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="customerIndex.jsp">Home</a>
-			</div>
-			<div class="jumbotron">
-				<h2>
-					Benvenuto<small>
-						${customerController.getCurrentCustomer().nome}
-						${customerController.getCurrentCustomer().cognome}</small>
-				</h2>
-
-				<!-- <p><a class="btn btn-primary btn-lg">Learn more</a></p> -->
-			</div>
-
+			<h1>M&M E-Commerce</h1>
+			<h2>
+				Benvenuto<small>
+					${customerController.getCurrentCustomer().nome}
+					${customerController.getCurrentCustomer().cognome}</small>
+			</h2>
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active"><h:form>
@@ -36,15 +29,9 @@
 					<li><a href='<c:url value="/faces/ordini.jsp"/>'>Lista
 							Ordini</a></li>
 					<li><a href='<c:url value="/faces/prodotti.jsp"/>'>Catalogo</a></li>
-
 				</ul>
 			</div>
-
 		</nav>
-		<script
-			src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="js/bootstrap.min.js"></script>
 	</body>
 </f:view>
 </html>

@@ -44,36 +44,7 @@
 					<h:outputLink value="customerIndex.jsp"> Torna alla home </h:outputLink>
 				</h:form>
 			</div>
-			<%-- <table>
-				<c:forEach var="ordine" items="#{ordineController.getAllOrders()}">
-					<tr>
-						<th>Codice di riferimento</th>
-						<th>Data Creazione</th>
-					</tr>
-					<tr>
-						<td><h:commandLink action="#{ordineController.findOrder}"
-								value="#{ordine.id}">
-								<f:param name="id" value="#{ordine.id}"></f:param>
-							</h:commandLink></td>
-						<td>${ordine.dataCreazione}</td>
-					</tr>
-
-				</c:forEach>
-			</table>
- --%>
 		</h:form>
 	</f:view>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

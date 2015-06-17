@@ -1,0 +1,391 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.3.5
+-- Dumped by pg_dump version 9.3.5
+-- Started on 2015-06-17 18:07:54
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- TOC entry 177 (class 3079 OID 11750)
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- TOC entry 1988 (class 0 OID 0)
+-- Dependencies: 177
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 170 (class 1259 OID 41082)
+-- Name: amministratore; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE amministratore (
+    id bigint NOT NULL,
+    cognome character varying(255) NOT NULL,
+    nome character varying(255) NOT NULL,
+    email character varying(255),
+    password character varying(255)
+);
+
+
+ALTER TABLE public.amministratore OWNER TO postgres;
+
+--
+-- TOC entry 171 (class 1259 OID 41090)
+-- Name: customer; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE customer (
+    id bigint NOT NULL,
+    cognome character varying(255) NOT NULL,
+    datadinascita date,
+    dataregistrazione date,
+    email character varying(255),
+    nome character varying(255) NOT NULL,
+    password character varying(255),
+    indirizzo_id bigint
+);
+
+
+ALTER TABLE public.customer OWNER TO postgres;
+
+--
+-- TOC entry 172 (class 1259 OID 41098)
+-- Name: indirizzo; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE indirizzo (
+    id bigint NOT NULL,
+    cap character varying(255) NOT NULL,
+    citta character varying(255) NOT NULL,
+    stato character varying(255),
+    via character varying(255) NOT NULL
+);
+
+
+ALTER TABLE public.indirizzo OWNER TO postgres;
+
+--
+-- TOC entry 173 (class 1259 OID 41106)
+-- Name: openjpa_sequence_table; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE openjpa_sequence_table (
+    id smallint NOT NULL,
+    sequence_value bigint
+);
+
+
+ALTER TABLE public.openjpa_sequence_table OWNER TO postgres;
+
+--
+-- TOC entry 174 (class 1259 OID 41111)
+-- Name: orderline; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE orderline (
+    id bigint NOT NULL,
+    prezzo real,
+    quantita integer NOT NULL,
+    ordine_id bigint,
+    prodotto_id bigint,
+    id_ordini bigint,
+    totale real
+);
+
+
+ALTER TABLE public.orderline OWNER TO postgres;
+
+--
+-- TOC entry 175 (class 1259 OID 41116)
+-- Name: ordine; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE ordine (
+    id bigint NOT NULL,
+    datachiusura date,
+    datacreazione date,
+    dataevasione date,
+    customer_id bigint,
+    totale real
+);
+
+
+ALTER TABLE public.ordine OWNER TO postgres;
+
+--
+-- TOC entry 176 (class 1259 OID 41121)
+-- Name: product; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE product (
+    id bigint NOT NULL,
+    code character varying(255) NOT NULL,
+    description character varying(255),
+    name character varying(255) NOT NULL,
+    price real NOT NULL,
+    quantity integer NOT NULL
+);
+
+
+ALTER TABLE public.product OWNER TO postgres;
+
+--
+-- TOC entry 1974 (class 0 OID 41082)
+-- Dependencies: 170
+-- Data for Name: amministratore; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY amministratore (id, cognome, nome, email, password) FROM stdin;
+1	Taverniti	Marco	mar.taverniti@gmail.com	marco
+\.
+
+
+--
+-- TOC entry 1975 (class 0 OID 41090)
+-- Dependencies: 171
+-- Data for Name: customer; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY customer (id, cognome, datadinascita, dataregistrazione, email, nome, password, indirizzo_id) FROM stdin;
+151	Rossi	1993-12-02	2015-06-12	mario.rossi@gmail.com	Mario	mario	201
+451	Verdi	1987-03-11	2015-06-15	paolo.verdi@gmail.com	Paolo	paolo	501
+2151	Neri	1987-11-12	2015-06-17	mauro.neri@gmail.com	Mauro	mauro	2201
+2251	Fabi	1992-02-11	2015-06-17	gio.fabi@gmail.com	Giorgio	giorgio	2301
+\.
+
+
+--
+-- TOC entry 1976 (class 0 OID 41098)
+-- Dependencies: 172
+-- Data for Name: indirizzo; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY indirizzo (id, cap, citta, stato, via) FROM stdin;
+201	00122	Roma	Roma	Ostiense
+501	00121	Roma	Roma	Del Mare
+2201	00121	roma	roma	roma
+2301	99321	Ascoli	Ap	rossa
+\.
+
+
+--
+-- TOC entry 1977 (class 0 OID 41106)
+-- Dependencies: 173
+-- Data for Name: openjpa_sequence_table; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY openjpa_sequence_table (id, sequence_value) FROM stdin;
+0	2351
+\.
+
+
+--
+-- TOC entry 1978 (class 0 OID 41111)
+-- Dependencies: 174
+-- Data for Name: orderline; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY orderline (id, prezzo, quantita, ordine_id, prodotto_id, id_ordini, totale) FROM stdin;
+301	10	30	\N	1	251	\N
+401	10	20	\N	1	351	\N
+601	25	10	\N	101	551	\N
+701	10	20	\N	1	651	\N
+702	25	10	\N	101	651	\N
+801	10	20	\N	1	751	\N
+901	10	5	\N	1	851	\N
+1001	25	20	\N	101	951	\N
+1101	10	20	\N	1	1051	\N
+1201	20	30	\N	51	1151	\N
+1301	10	20	\N	1	1251	\N
+1451	15	80	\N	1351	1401	\N
+1551	25	1	\N	101	1501	\N
+1651	10	1	\N	1	1601	\N
+1901	2	10	\N	1801	1851	\N
+1902	70	30	\N	1751	1851	\N
+2001	25	2	\N	101	1951	50
+2002	70	1	\N	1751	1951	70
+2101	2	1	\N	1801	2051	2
+2102	10	2	\N	1	2051	20
+2103	15	2	\N	1351	2051	30
+\.
+
+
+--
+-- TOC entry 1979 (class 0 OID 41116)
+-- Dependencies: 175
+-- Data for Name: ordine; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY ordine (id, datachiusura, datacreazione, dataevasione, customer_id, totale) FROM stdin;
+251	\N	2015-06-15	\N	151	\N
+351	\N	2015-06-15	\N	151	\N
+551	\N	2015-06-15	\N	151	\N
+651	\N	2015-06-15	\N	151	\N
+751	\N	2015-06-15	\N	151	\N
+851	\N	2015-06-16	\N	151	\N
+951	\N	2015-06-16	\N	151	\N
+1051	\N	2015-06-16	\N	151	\N
+1151	\N	2015-06-16	\N	451	\N
+1251	\N	2015-06-16	\N	451	\N
+1401	\N	2015-06-16	\N	151	\N
+1501	\N	2015-06-16	\N	151	\N
+1601	\N	2015-06-16	\N	151	\N
+1851	2015-06-17	2015-06-17	\N	151	\N
+1951	2015-06-17	2015-06-17	\N	451	120
+2051	2015-06-17	2015-06-17	\N	451	52
+\.
+
+
+--
+-- TOC entry 1980 (class 0 OID 41121)
+-- Dependencies: 176
+-- Data for Name: product; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY product (id, code, description, name, price, quantity) FROM stdin;
+1	mgt	rossa	maglietta	10	300
+51	mgn	blu	maglione	20	40
+101	jns		jeans	25	50
+1351	gnn		gonna	15	2000
+1701	cmc		Camicia	50	4000
+1751	srp		Scarpe	70	60
+1801	clz	bianchi	Calzini	2	10000
+\.
+
+
+--
+-- TOC entry 1850 (class 2606 OID 41089)
+-- Name: amministratore_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY amministratore
+    ADD CONSTRAINT amministratore_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1852 (class 2606 OID 41097)
+-- Name: customer_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY customer
+    ADD CONSTRAINT customer_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1855 (class 2606 OID 41105)
+-- Name: indirizzo_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY indirizzo
+    ADD CONSTRAINT indirizzo_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1857 (class 2606 OID 41110)
+-- Name: openjpa_sequence_table_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY openjpa_sequence_table
+    ADD CONSTRAINT openjpa_sequence_table_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1861 (class 2606 OID 41115)
+-- Name: orderline_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY orderline
+    ADD CONSTRAINT orderline_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1864 (class 2606 OID 41120)
+-- Name: ordine_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY ordine
+    ADD CONSTRAINT ordine_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1866 (class 2606 OID 41128)
+-- Name: product_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY product
+    ADD CONSTRAINT product_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1853 (class 1259 OID 41129)
+-- Name: i_customr_indirizzo; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX i_customr_indirizzo ON customer USING btree (indirizzo_id);
+
+
+--
+-- TOC entry 1862 (class 1259 OID 41132)
+-- Name: i_ordine_customer; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX i_ordine_customer ON ordine USING btree (customer_id);
+
+
+--
+-- TOC entry 1858 (class 1259 OID 41130)
+-- Name: i_ordrlin_ordine; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX i_ordrlin_ordine ON orderline USING btree (ordine_id);
+
+
+--
+-- TOC entry 1859 (class 1259 OID 41131)
+-- Name: i_ordrlin_prodotto; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX i_ordrlin_prodotto ON orderline USING btree (prodotto_id);
+
+
+--
+-- TOC entry 1987 (class 0 OID 0)
+-- Dependencies: 5
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+-- Completed on 2015-06-17 18:07:54
+
+--
+-- PostgreSQL database dump complete
+--
+

@@ -23,6 +23,7 @@ public class Ordine {
 	private List<OrderLine> lineeOrdine;
 	@ManyToOne
 	private Customer customer;
+	private Float totale;
 
 
 	public Ordine(){
@@ -33,6 +34,14 @@ public class Ordine {
 		this.customer=customer;
 		this.dataCreazione=new Date();
 		this.lineeOrdine=new LinkedList<OrderLine>();
+	}
+	
+	public void setTotale(){
+		Float totale=new Float(0);
+		for(OrderLine o : this.lineeOrdine){
+			totale+=o.getTotale();
+		}
+		this.totale = totale;
 	}
 
 	// GETTER AND SETTER
@@ -94,5 +103,13 @@ public class Ordine {
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+
+	public Float getTotale() {
+		return totale;
+	}
+
+	public void setTotale(Float totale) {
+		this.totale = totale;
 	}
 }

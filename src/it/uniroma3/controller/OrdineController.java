@@ -17,7 +17,7 @@ public class OrdineController extends SessioneController {
 
 	@ManagedProperty(value="#{param.id}")
 	private Long idOrder;
-	private Long quantity;
+	private Integer quantity;
 	private Ordine ordineCorrente;
 	private String messaggio;
 	//private String message;
@@ -49,6 +49,7 @@ public class OrdineController extends SessioneController {
 
 	}
 	public String terminaOrdine(){
+		this.ordineCorrente.setTotale();
 		this.ordineCorrente.setDataChiusura(new Date());
 		this.ordineFacade.createOrder(ordineCorrente);
 		this.removeAttribute("currentOrder");
@@ -101,11 +102,11 @@ public class OrdineController extends SessioneController {
 		this.idOrder = idOrder;
 	}
 
-	public Long getQuantity() {
+	public Integer getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(Long quantity) {
+	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
 

@@ -15,6 +15,7 @@ public class OrderLine {
 	private Product prodotto;
 	@ManyToOne
 	private Ordine ordine;
+	private Float totale;
 
 	public OrderLine(){
 
@@ -24,6 +25,7 @@ public class OrderLine {
 		this.quantita=quantita;
 		this.prodotto=prodotto;
 		this.prezzo=this.prodotto.getPrice();
+		this.totale = this.quantita*this.prezzo;
 	}
 
 	public Float getPrezzo() {
@@ -64,6 +66,14 @@ public class OrderLine {
 
 	public void setOrdine(Ordine ordine) {
 		this.ordine = ordine;
+	}
+
+	public Float getTotale() {
+		return totale;
+	}
+
+	public void setTotale(Float totale) {
+		this.totale = totale;
 	}
 
 }

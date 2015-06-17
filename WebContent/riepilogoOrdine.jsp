@@ -11,34 +11,57 @@
 </head>
 <body>
 	<f:view>
-		<h1>Riepilogo del tuo ordine:</h1>
-
-		<table>
-			<tr>
-				<th>Nome</th>
-				<th>Prezzo</th>
-				<th>Quantita'</th>
-			</tr>
-			<c:forEach var="orderLine" items="#{ordineController.ordineCorrente.getLineeOrdine()}">
-
-				<td>${orderLine.prodotto.name}</td>
-				<td>${orderLine.prezzo}</td>
-				<td>${orderLine.quantita}</td>
-
-			</c:forEach>
-		</table>
-		<br />
 		<h:form>
-
-
-			<div>
-				<a href='ordini.jsp'>Torna alla lista di ordini</a>
+			<div class="sfondo_trasparente">
+				<div class="page-header" style="margin-top: 0px">
+					<h1>Ecco il riepilogo del tuo ordine:</h1>
+				</div>
+				<div>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Prodotto</th>
+								<th>Prezzo</th>
+								<th>Quantita'</th>
+								<th>Totale</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<c:forEach var="orderLine"
+									items="#{ordineController.ordineCorrente.getLineeOrdine()}">
+									<tr>
+										<th>${orderLine.prodotto.getName()}</th>
+										<th>${orderLine.prezzo}</th>
+										<th>${orderLine.quantita}</th>
+										<th>${orderLine.totale}</th>
+								</c:forEach>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<h:form>
+					<h:outputLink value="customerIndex.jsp"> Torna alla home </h:outputLink>
+				</h:form>
 			</div>
-			<a href='customerIndex.jsp'>Torna alla home</a>
+			<%-- <table>
+				<c:forEach var="ordine" items="#{ordineController.getAllOrders()}">
+					<tr>
+						<th>Codice di riferimento</th>
+						<th>Data Creazione</th>
+					</tr>
+					<tr>
+						<td><h:commandLink action="#{ordineController.findOrder}"
+								value="#{ordine.id}">
+								<f:param name="id" value="#{ordine.id}"></f:param>
+							</h:commandLink></td>
+						<td>${ordine.dataCreazione}</td>
+					</tr>
 
-
+				</c:forEach>
+			</table>
+ --%>
 		</h:form>
-
 	</f:view>
 </body>
 </html>

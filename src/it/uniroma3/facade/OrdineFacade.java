@@ -4,8 +4,10 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+
 import it.uniroma3.model.*;
 
 @Stateless
@@ -22,7 +24,12 @@ public class OrdineFacade {
 	public Ordine trovaOrdine(Long id){
 		TypedQuery<Ordine> t = em.createQuery("SELECT o FROM Ordine o WHERE o.id = :id", Ordine.class);
 		t.setParameter("id", id);
-		return t.getSingleResult();
+		try{
+			return t.getSingleResult();
+		}
+		catch(NoResultException e){
+			return null;
+		}
 	}
 	
 	public void aggiornaOrdine(Ordine o){

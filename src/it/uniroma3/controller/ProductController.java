@@ -5,6 +5,7 @@ import java.util.List;
 
 
 
+
 import it.uniroma3.facade.ProdottoFacade;
 import it.uniroma3.model.Product;
 
@@ -50,6 +51,19 @@ public class ProductController extends SessioneController{
 		return "prodotto";
 	}
 
+	public String tornaAllaHome(){
+		String home = "adminIndex.jsp";
+		if (!customerLoggato()){
+			if(adminLoggato()){
+				return home;}
+			else {
+				home = "index.jsp";
+				return home;}
+		}
+		else{ home = "customerIndex.jsp";
+		return home;}
+	}
+	
 	public Long getId() {
 		return id;
 	}

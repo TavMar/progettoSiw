@@ -8,7 +8,7 @@ import it.uniroma3.model.*;
 
 public class SessioneController {
 
-	
+
 
 	private Customer customerCorrente;
 	private Amministratore adminCorrente;
@@ -36,7 +36,7 @@ public class SessioneController {
 		HttpSession session = (HttpSession) context.getExternalContext().getSession(true);
 		session.removeAttribute(nameAttribute);
 	}
-	
+
 	public Customer getCurrentCustomer() {
 		return customerCorrente;
 	}
@@ -62,12 +62,13 @@ public class SessioneController {
 	public boolean adminLoggato(){
 		return this.adminCorrente!=null;
 	}
-	
+
 	public boolean customerLoggato(){
 		return this.customerCorrente!=null;
 	}
-	
+
 	public boolean nessunoLoggato(){
 		return this.customerCorrente!=null && this.adminCorrente!=null;
 	}
+
 }

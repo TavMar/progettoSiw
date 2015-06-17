@@ -35,12 +35,16 @@
 					<label for="quantita">Quantita'</label>
 					<div>${productController.product.quantity}</div>
 				</div>
-				<%-- <div>Codice: ${productController.product.code}</div>
-		<div>Prezzo: ${productController.product.price}</div>
-		<div>Descrizione: ${productController.product.description}</div>
-		<div>Quantita': ${productController.product.quantity}</div> --%>
 				<br />
-
+				<h:panelGroup>
+					<h:form>
+						<div>
+							<h:commandButton value="Torna Alla Home"
+									action="#{productController.tornaAllaHome}">
+								</h:commandButton>
+						</div>
+					</h:form>
+				</h:panelGroup>
 				<h:panelGroup rendered="#{ordineController.customerStaOrdinando()}">
 					<h:form>
 						<div>

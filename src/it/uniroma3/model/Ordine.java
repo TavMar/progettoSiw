@@ -87,4 +87,12 @@ public class Ordine {
 	public void setLineeOrdine(List<OrderLine> lineeOrdine) {
 		this.lineeOrdine = lineeOrdine;
 	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
 }

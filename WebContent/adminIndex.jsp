@@ -27,9 +27,10 @@
 						Cliente</a></li>
 				<li><a href='<c:url value="/faces/nuovoProdotto.jsp"/>'>Inserisci
 						Nuovo Prodotto</a></li>
-				<li><a
-					href='<c:url value="/faces/prodotti.jsp"/>'>Visualizza il
-						catalogo prodotti</a></li>
+				<li><a href='<c:url value="/faces/cercaInfo.jsp"/>'>Ricerca
+						Cliente</a></li>
+				<li><a href='<c:url value="/faces/prodotti.jsp"/>'>Visualizza
+						il catalogo prodotti</a></li>
 
 			</ul>
 

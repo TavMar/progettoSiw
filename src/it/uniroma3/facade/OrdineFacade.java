@@ -24,7 +24,7 @@ public class OrdineFacade {
 		t.setParameter("id", id);
 		return t.getSingleResult();
 	}
-
+	
 	public void aggiornaOrdine(Ordine o){
 		em.merge(o);
 	}

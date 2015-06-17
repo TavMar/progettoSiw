@@ -12,9 +12,45 @@
 </head>
 <body>
 	<f:view>
-		<h1>Ecco i tuoi ordini effettuati</h1>
 		<h:form>
-			<table>
+			<div class="sfondo_trasparente">
+				<div class="page-header" style="margin-top: 0px">
+					<h1>Ecco la lista dei tuoi ordini:</h1>
+				</div>
+				<div>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Codice Identificativo</th>
+								<th>Data di Creazione</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<c:forEach var="ordine"
+									items="#{ordineController.getAllOrders()}">
+									<tr>
+										<th><h:form>
+												<h:commandLink action="#{ordineController.findOrder}"
+													value="#{ordine.id}">
+													<f:param name="id" value="#{ordine.id}" />
+												</h:commandLink>
+											</h:form></th>
+										<th>${ordine.dataCreazione}</th>
+										<%-- <th>${product.code}</th> --%>
+
+										<%-- <th>${product.description}</th>
+								<th>${product.quantity}</th> --%>
+								</c:forEach>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<h:form>
+					<h:outputLink value="customerIndex.jsp"> Torna alla home </h:outputLink>
+				</h:form>
+			</div>
+			<%-- <table>
 				<c:forEach var="ordine" items="#{ordineController.getAllOrders()}">
 					<tr>
 						<th>Codice di riferimento</th>
@@ -30,11 +66,9 @@
 
 				</c:forEach>
 			</table>
+ --%>
+		</h:form>
 
-		</h:form>
-		<h:form>
-			<h:outputLink value="customerIndex.jsp"> Torna alla home </h:outputLink>
-		</h:form>
 	</f:view>
 </body>
 </html>

@@ -17,15 +17,31 @@
 			<div style="width: 150px; float: left;">
 				<div>
 					<label for="nome">Nome</label>
-					<div>${adminController.customer.nome}</div>
+					<div>${ordineController.ordineCorrente.customer.nome}</div>
 				</div>
 				<div>
 					<label for="cognome">Cognome</label>
-					<div>${adminController.customer.cognome}</div>
+					<div>${ordineController.ordineCorrente.customer.cognome}</div>
 				</div>
 				<div>
 					<label for="indirizzo">Indirizzo</label>
-					<div>${adminController.customer.indirizzo}</div>
+					<br>
+				</div>
+				<div>
+					<label for="via">via:</label>
+					<div>${ordineController.ordineCorrente.customer.indirizzo.via}</div>
+				</div>
+				<div>
+					<label for="citta">citta':</label>
+					<div>${ordineController.ordineCorrente.customer.indirizzo.citta}</div>
+				</div>
+				<div>
+					<label for="provincia">provincia:</label>
+					<div>${ordineController.ordineCorrente.customer.indirizzo.stato}</div>
+				</div>
+				<div>
+					<label for="cap">cap:</label>
+					<div>${ordineController.ordineCorrente.customer.indirizzo.cap}</div>
 				</div>
 				<br /> <a href='adminIndex.jsp'>Torna alla home</a>
 			</div>

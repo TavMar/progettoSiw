@@ -19,6 +19,7 @@ public class OrdineController extends SessioneController {
 	private Long idOrder;
 	private Long quantity;
 	private Ordine ordineCorrente;
+	private String messaggio;
 	//private String message;
 
 
@@ -48,8 +49,8 @@ public class OrdineController extends SessioneController {
 
 	}
 	public String terminaOrdine(){
-		this.ordineFacade.createOrder(ordineCorrente);
 		this.ordineCorrente.setDataChiusura(new Date());
+		this.ordineFacade.createOrder(ordineCorrente);
 		this.removeAttribute("currentOrder");
 		this.removeAttribute("currentProduct");
 		return "riepilogoOrdine";
@@ -64,6 +65,17 @@ public class OrdineController extends SessioneController {
 	public String findOrder(){
 		this.ordineCorrente = this.ordineFacade.trovaOrdine(idOrder);
 		return "riepilogoOrdine";
+	}
+	
+	public String trovaUtente(){
+		String nextPage="infoCliente";
+		this.ordineCorrente = this.ordineFacade.trovaOrdine(idOrder);
+		if (this.ordineCorrente==null){
+			this.messaggio="Ordine inesistente";
+			nextPage="cercaInfo";
+		}
+		return nextPage;
+		
 	}
 	
 	public boolean customerStaOrdinando(){
@@ -104,5 +116,13 @@ public class OrdineController extends SessioneController {
 	public void setOrdineCorrente(Ordine ordineCorrente) {
 		this.setSessionAttribute("currentOrder", ordineCorrente);
 		this.ordineCorrente = ordineCorrente;
+	}
+
+	public String getMessaggio() {
+		return messaggio;
+	}
+
+	public void setMessaggio(String messaggio) {
+		this.messaggio = messaggio;
 	}
 }

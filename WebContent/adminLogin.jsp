@@ -7,7 +7,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="./risorse/css/bootstrap.min.css"></link>
-<link rel="stylesheet" href="./risorse/css/Tema.css"></link>
+<link rel="stylesheet" href="./risorse/css/tema2.css"></link>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login</title>
 </head>
